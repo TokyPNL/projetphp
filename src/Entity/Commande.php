@@ -19,39 +19,21 @@ class Commande
     /**
      * @ORM\Column(type="date")
      */
-    private $dateComm;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Client", inversedBy="commandes")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $idClient;
+    private $dateCom;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getDateComm(): ?\DateTimeInterface
+    public function getDateCom(): ?\DateTimeInterface
     {
-        return $this->dateComm;
+        return $this->dateCom;
     }
 
-    public function setDateComm(\DateTimeInterface $dateComm): self
+    public function setDateCom(\DateTimeInterface $dateCom): self
     {
-        $this->dateComm = $dateComm;
-
-        return $this;
-    }
-
-    public function getIdClient(): ?Client
-    {
-        return $this->idClient;
-    }
-
-    public function setIdClient(?Client $idClient): self
-    {
-        $this->idClient = $idClient;
+        $this->dateCom = $dateCom;
 
         return $this;
     }

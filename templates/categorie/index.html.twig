@@ -9,8 +9,7 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Libelle</th>
-                
+                <th>LibelleCat</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -18,7 +17,7 @@
         {% for categorie in categories %}
             <tr>
                 <td>{{ categorie.id }}</td>
-                <td>{{ categorie.libelle }}</td>
+                <td>{{ categorie.libelleCat }}</td>
                 <td>
                     <a href="{{ path('categorie_show', {'id': categorie.id}) }}">show</a>
                     <a href="{{ path('categorie_edit', {'id': categorie.id}) }}">edit</a>

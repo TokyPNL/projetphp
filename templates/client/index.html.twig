@@ -21,19 +21,8 @@
                 <td>{{ client.nom }}</td>
                 <td>{{ client.adresse }}</td>
                 <td>
-                    <a
-                     role="button" 
-	   				 class="btn btn-primary edit-data"
-                     href="{{ path('client_show', {'id': client.id}) }}">show
-                     </a>
-                    <a 
-                    role="button" 
-	   				class="btn btn-primary edit-data"
-                    href="{{ path('client_edit', {'id': client.id}) }}">edit
-                    </a>
-                    <a role="button" 
-	   				   class="btn btn-primary del-data"
-                       href="{{ path('client_delete', {'id': client.id}) }}">delete</a>
+                    <a href="{{ path('client_show', {'id': client.id}) }}">show</a>
+                    <a href="{{ path('client_edit', {'id': client.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}

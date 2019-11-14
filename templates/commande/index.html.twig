@@ -8,9 +8,8 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Code</th>
-                <th>Client</th>
-                <th>Date de commande</th>
+                <th>Id</th>
+                <th>DateCom</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -18,8 +17,7 @@
         {% for commande in commandes %}
             <tr>
                 <td>{{ commande.id }}</td>
-                <td>{{ commande.dateComm ? commande.dateComm|date('Y-m-d') : '' }}</td>
-                <td>{{ commande.idClient.nom }}</td>
+                <td>{{ commande.dateCom ? commande.dateCom|date('Y-m-d') : '' }}</td>
                 <td>
                     <a href="{{ path('commande_show', {'id': commande.id}) }}">show</a>
                     <a href="{{ path('commande_edit', {'id': commande.id}) }}">edit</a>

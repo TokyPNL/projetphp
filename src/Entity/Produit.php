@@ -17,9 +17,9 @@ class Produit
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string", length=150)
      */
-    private $libelle;
+    private $libellePro;
 
     /**
      * @ORM\Column(type="integer")
@@ -32,24 +32,23 @@ class Produit
     private $pu;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Categorie", inversedBy="produits")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToOne(targetEntity="App\Entity\LigneCommande", inversedBy="idProduit")
      */
-    private $idCategorie;
+    private $ligneCommande;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getLibelle(): ?string
+    public function getLibellePro(): ?string
     {
-        return $this->libelle;
+        return $this->libellePro;
     }
 
-    public function setLibelle(string $libelle): self
+    public function setLibellePro(string $libellePro): self
     {
-        $this->libelle = $libelle;
+        $this->libellePro = $libellePro;
 
         return $this;
     }
@@ -78,14 +77,14 @@ class Produit
         return $this;
     }
 
-    public function getIdCategorie(): ?Categorie
+    public function getLigneCommande(): ?LigneCommande
     {
-        return $this->idCategorie;
+        return $this->ligneCommande;
     }
 
-    public function setIdCategorie(?Categorie $idCategorie): self
+    public function setLigneCommande(?LigneCommande $ligneCommande): self
     {
-        $this->idCategorie = $idCategorie;
+        $this->ligneCommande = $ligneCommande;
 
         return $this;
     }
