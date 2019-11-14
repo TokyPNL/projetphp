@@ -1,13 +1,22 @@
-{% extends 'base.html.twig' %}
+{{ include('client/base.html.twig') }}
 
-{% block title %}Edit Categorie{% endblock %}
 
 {% block body %}
-    <h1>Edit Categorie</h1>
+    <div>
+    <h1><center><b>Edit Categorie</b></center></h1></br></br>
 
     {{ include('categorie/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('categorie_index') }}">back to list</a>
+    <a class="btn btn-primary btn-lg" href="{{ path('categorie_index') }}">return</a>
 
     {{ include('categorie/_delete_form.html.twig') }}
+    </div>
+    <style>
+
+div{
+  width: 100%;
+  text-align: center;
+}
+
+</style>
 {% endblock %}

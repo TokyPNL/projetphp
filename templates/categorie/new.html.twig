@@ -1,11 +1,20 @@
-{% extends 'base.html.twig' %}
+{{ include('client/base.html.twig') }}
 
-{% block title %}New Categorie{% endblock %}
 
 {% block body %}
-    <h1>Create new Categorie</h1>
+<div>
+    <h1><center><b>Creer nouveau Categorie</b></center></h1></br></br>
 
     {{ include('categorie/_form.html.twig') }}
 
-    <a href="{{ path('categorie_index') }}">back to list</a>
+    <a class="btn btn-primary btn-lg" href="{{ path('categorie_index') }}">retour</a>
+    </div>
+    <style>
+
+        div{
+        width: 100%;
+        text-align: center;
+        }
+
+</style>
 {% endblock %}

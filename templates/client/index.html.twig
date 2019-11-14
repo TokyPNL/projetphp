@@ -1,28 +1,36 @@
-{% extends 'base.html.twig' %}
+{# {% extends 'base.html.twig' %} #}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
 
-{% block title %}Client index{% endblock %}
+        <title>{% block title %}CLIENT{% endblock %}</title>
+        {% block stylesheet %}
+        <link rel="stylesheet" type="text/css" href="{{ asset('/css/bootstrap.min.css') }}" >
+        {% endblock %}
+    </head>
+    <body>
+        
+    <h1><center>CLIENT</center></h1>
 
-{% block body %}
-    <h1>Client index</h1>
-
-    <table class="table">
+    <table class="table table-dark">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Nom</th>
-                <th>Adresse</th>
-                <th>actions</th>
+                <th scope="col">Id</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Adresse</th>
+                <th scope="col">actions</th>
             </tr>
         </thead>
         <tbody>
         {% for client in clients %}
             <tr>
-                <td>{{ client.id }}</td>
+                <td  scope="row">{{ client.id }}</td>
                 <td>{{ client.nom }}</td>
                 <td>{{ client.adresse }}</td>
                 <td>
-                    <a href="{{ path('client_show', {'id': client.id}) }}">show</a>
-                    <a href="{{ path('client_edit', {'id': client.id}) }}">edit</a>
+                    <a type="button" class="btn btn-outline-info" href="{{ path('client_show', {'id': client.id}) }}">voir</a>
+                    <a type="button" class="btn btn-outline-info" href="{{ path('client_edit', {'id': client.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -33,5 +41,10 @@
         </tbody>
     </table>
 
-    <a href="{{ path('client_new') }}">Create new</a>
+    <a class="btn btn-info" href="{{ path('client_new') }}">+ajout</a>
+    
+{% block body %}
 {% endblock %}
+    </body>
+
+</html>

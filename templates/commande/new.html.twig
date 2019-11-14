@@ -1,11 +1,19 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}New Commande{% endblock %}
+{{ include('client/base.html.twig') }}
 
 {% block body %}
-    <h1>Create new Commande</h1>
+<div>
+    <h1><center><b>Creer nouveau Commande</b></center></h1></br></br>
 
     {{ include('commande/_form.html.twig') }}
 
-    <a href="{{ path('commande_index') }}">back to list</a>
+    <a class="btn btn-primary btn-lg" href="{{ path('commande_index') }}">retour</a>
+    </div>
+    <style>
+
+        div{
+        width: 100%;
+        text-align: center;
+        }
+
+</style>
 {% endblock %}
